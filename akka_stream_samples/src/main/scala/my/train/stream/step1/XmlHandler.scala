@@ -1,22 +1,18 @@
 package my.train.stream.step1
 
-import java.util.concurrent.TimeUnit
-
 import akka.NotUsed
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
-import akka.http.scaladsl.model.HttpEntity.ChunkStreamPart
 import akka.http.scaladsl.model._
 import akka.stream.ActorMaterializer
 import akka.stream.scaladsl._
 import akka.util.ByteString
 
-import scala.concurrent.Future
 import scala.util.{Failure, Success}
 
-object ParseXml {
+object XmlHandler {
 
-  implicit val system = ActorSystem("reactive-tweets")
+  implicit val system = ActorSystem("reactive-news")
 
   implicit val materializer = ActorMaterializer()
 
@@ -24,6 +20,13 @@ object ParseXml {
 
   private val endTagOfArticle = "</ArticleItem>"
   private val extraLineRegexp = "<\\?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"\\?>|<IBTFxWire>|</IBTFxWire>"
+  private val flow = Flow[ByteString]
+    .filterNot(_.utf8String.matches(extraLineRegexp))
+    .map(bs => ByteString(bs.utf8String.trim))
+    .via(Framing.delimiter(ByteString(endTagOfArticle), maximumFrameLength = 10240))
+    .map(_.utf8String)
+    .map(_ + endTagOfArticle)
+    .map(ByteString(_))
 
   def main(args: Array[String]): Unit = {
     new Thread(() => WebServer.startServer("localhost", 8200)).start()
@@ -31,36 +34,18 @@ object ParseXml {
 
     val uri = Uri("http://localhost:8200/stream")
 
-    val flow = Flow[ByteString]
-      .filterNot(_.utf8String.matches(extraLineRegexp))
-      .map(bs => ByteString(bs.utf8String.trim))
-      .via(Framing.delimiter(ByteString(endTagOfArticle), maximumFrameLength = 10240))
-      .map(_.utf8String)
-      .map(_ + endTagOfArticle)
-      .map(ByteString(_))
-
     Http().singleRequest(HttpRequest(uri = uri)) andThen {
       case Success(response) =>
         response.entity.dataBytes
           .via(flow)
           .map(_.utf8String).runForeach ( res =>
-          //todo send res into actor
+          //todo send result into actor
           println(res)
         )
 
       case Failure(ex) =>
         println(s"error: ${ex.getMessage}")
     }
-
-
-
-    /* val finished = Http().singleRequest(HttpRequest(uri = uri)).flatMap { response =>
-       response.entity.withSizeLimit(1024 * 1024 * 100).dataBytes
-       .
-     runForeach{ chunk =>
-       println(chunk.utf8String + "--")
-     }
-     }*/
 
   }
 
