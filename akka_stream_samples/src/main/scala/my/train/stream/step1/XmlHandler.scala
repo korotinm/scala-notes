@@ -33,7 +33,7 @@ object XmlHandler {
 
 
     val uri = Uri("http://localhost:8200/stream")
-    //val uri = Uri("http://www.fxwirepro.com/fxwire/xml/newswire.php?id=stedcap&pw=39gh2jgsg")
+
 
     Http().singleRequest(HttpRequest(uri = uri)) andThen {
       case Success(response) =>
