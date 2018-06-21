@@ -66,3 +66,37 @@ object MutualRecursion extends App {
 
 
 }
+
+/* 1. console output
+result = 10000000
+timeTailRec = 373725240
+
+result = 10000000
+timeTrampoline = 666089928
+
+result = 10000000
+timeEval = 627727014
+ */
+
+/* 2. console output
+result = 10000000
+timeTailRec = 158610310
+
+result = 10000000
+timeTrampoline = 355055989
+
+result = 10000000
+timeEval = 355197475
+ */
+
+
+/* 3. console output
+result = 10000000
+timeTailRec = 170295951
+
+result = 10000000
+timeTrampoline = 344628028
+
+result = 10000000
+timeEval = 361608670
+ */

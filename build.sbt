@@ -47,6 +47,13 @@ lazy val cats_samples = (project in file("cats_samples"))
 
   ).dependsOn(common % "compile;test->test")
 
+lazy val cats_effect_samples = (project in file("cats_effect_samples"))
+  .settings(commonSettings)
+  .settings(
+    parallelExecution in Test := false,
+    libraryDependencies += "org.typelevel" %% "cats-effect" % "1.0.0-RC2"
+  ).dependsOn(common % "compile;test->test")
+
 lazy val experiments = (project in file("experiments"))
   .settings(commonSettings)
   .settings(
@@ -71,6 +78,7 @@ lazy val akka_stream_samples = (project in file("akka_stream_samples"))
 val training = (project in file("."))
   .settings(commonSettings)
   .aggregate(cats_samples)
+  .aggregate(cats_effect_samples)
   .aggregate(akka_samples)
   .aggregate(akka_stream_samples)
   .aggregate(experiments)
