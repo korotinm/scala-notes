@@ -1,3 +1,5 @@
+addSbtPlugin("org.ensime" % "sbt-ensime" % "2.5.1")
+
 addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.3.1")
 
 addSbtPlugin("net.virtual-void" % "sbt-dependency-graph" % "0.9.0")

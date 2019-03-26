@@ -66,6 +66,12 @@ lazy val akka_samples = (project in file("akka_samples"))
     libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.5.12"
   ).dependsOn(common % "compile;test->test")
 
+  lazy val akka_typed_samples = (project in file("akka_typed_samples"))
+  .settings(commonSettings)
+  .settings(
+    libraryDependencies += "com.typesafe.akka" %% "akka-actor-typed" % "2.5.21"
+  ).dependsOn(common % "compile;test->test")
+
 lazy val akka_stream_samples = (project in file("akka_stream_samples"))
   .settings(commonSettings)
   .settings(
@@ -80,5 +86,6 @@ val training = (project in file("."))
   .aggregate(cats_samples)
   .aggregate(cats_effect_samples)
   .aggregate(akka_samples)
+  .aggregate(akka_typed_samples)
   .aggregate(akka_stream_samples)
   .aggregate(experiments)
