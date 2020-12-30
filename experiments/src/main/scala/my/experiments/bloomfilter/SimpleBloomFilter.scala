@@ -19,8 +19,8 @@ class SimpleBloomFilter(size: Int, capacity: Int) {
       i match {
         case _ if i == n => acc
         case _ =>
-          val hashRes = MurmurHash3.bytesHash(value.getBytes())
-          _hash(i + 1, acc + hashRes + i)
+          val hashRes = MurmurHash3.stringHash(value + i)
+          _hash(i + 1, acc + hashRes)
       }
 
     abs(_hash(0, 0)) % size
@@ -38,11 +38,11 @@ class SimpleBloomFilter(size: Int, capacity: Int) {
 object SimpleBloomFilter extends App {
   // case 1
   {
-    val size = 400000
+    val size = 190000
     val capacity = 10000
 
     val bloomFilter = new SimpleBloomFilter(size, capacity)
-    assert(bloomFilter.numberOfHashIteration == 28)
+    assert(bloomFilter.numberOfHashIteration == 13)
 
     (1 to capacity).foreach(i => bloomFilter.add(s"test_${i.toString()}"))
     assert((1 to capacity).map(i => bloomFilter.has(s"test_${i.toString()}")).exists(_ == false) == false)
