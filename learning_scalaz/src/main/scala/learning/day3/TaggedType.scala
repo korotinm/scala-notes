@@ -24,7 +24,13 @@ object Example extends App {
     val day2: Daytime = Daytime(10L)
     println(s"day2 = $day2")
 
+    val dayLong = day2
+    println(s"dayLong = $dayLong")
+
     val dtRange = makeRange(Daytime(1L), Daytime(10L))
     println(s"dtRange = $dtRange")
+
+    val daytimes: List[Daytime] = (1 to 10).map(Daytime(_)).toList
+    println(s"daytimes = ${daytimes.mkString(", ")}")
   }
 }
