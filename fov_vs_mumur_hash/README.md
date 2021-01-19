@@ -1,16 +1,20 @@
-## This instruction was called for running all of tests below:
+# Comparison FOV hash functions
+
+## This instruction was called for running all of tests below
+
 `jmh:run -i 3 -wi 4 -f1 -gc false`
 
 ---
 
-## Here were considered 3 types of hash functions:
+## Here were considered 3 types of hash functions
+
 - `FOV - 1` (32 bits)
 - `FOV - 1a` (32 bits)
 - `Murmur3` for contrast
 
 ---
 
-## Tests called method for hashing 100K - 2.1M words with length from 5 to 11 chars. Each word was created with using random number which converted to char type.
+## Tests called method for hashing 100K - 2.1M words with length from 5 to 11 chars. Each word was created with using random number which converted to char type
 
 | Benchmark | Mode | Cnt | Score | Error | Units |
 --- | --- | --- | --- | --- | ---
@@ -41,7 +45,7 @@ HashBenchmarks.murmur3_words_2_100_000 | thrpt | 3 | 13.780 | ±  0.956 | ops/s
 
 ---
 
-## Tests called method for hashing 100K - 2.1M words with length from 5 to 11 chars. Each word was created with using random printable chars.
+## Tests called method for hashing 100K - 2.1M words with length from 5 to 11 chars. Each word was created with using random printable chars
 
 | Benchmark | Mode | Cnt | Score | Error | Units |
 --- | --- | --- | --- | --- | ---
