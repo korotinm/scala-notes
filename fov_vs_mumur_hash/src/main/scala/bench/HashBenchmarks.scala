@@ -16,7 +16,7 @@ import org.openjdk.jmh.annotations.Level
 import scala.util.hashing.MurmurHash3
 
 @OutputTimeUnit(TimeUnit.SECONDS)
-@BenchmarkMode(Array(Mode.))
+@BenchmarkMode(Array(Mode.Throughput))
 class HashBenchmarks {
 
   @Benchmark

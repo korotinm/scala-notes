@@ -14,7 +14,7 @@
 
 ---
 
-## Tests called method for hashing 100K - 2.1M words with length from 5 to 11 chars. Each word was created with using random number which converted to char type
+## Were called methods for hashing 100K - 2.1M words with length from 5 to 11 chars. Each word was created with using random number which converted to char type
 
 | Benchmark | Mode | Cnt | Score | Error | Units |
 --- | --- | --- | --- | --- | ---
@@ -45,7 +45,7 @@ HashBenchmarks.murmur3_words_2_100_000 | thrpt | 3 | 13.780 | ±  0.956 | ops/s
 
 ---
 
-## Tests called method for hashing 100K - 2.1M words with length from 5 to 11 chars. Each word was created with using random printable chars
+## Were called methods for hashing 100K - 2.1M words with length from 5 to 11 chars. Each word was created with using random printable chars
 
 | Benchmark | Mode | Cnt | Score | Error | Units |
 --- | --- | --- | --- | --- | ---
