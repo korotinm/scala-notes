@@ -4,6 +4,9 @@ import java.io.PrintWriter
 import java.io.File
 import scala.util.Random
 import scala.io.Source
+import scala.util.Success
+import scala.util.Failure
+import scala.util.Try
 
 object FileUtil {
 
@@ -15,15 +18,34 @@ object FileUtil {
       println(s"Deleted file: ${file.getName()} ${file.delete()}")
 
     println(s"Created file: ${file.getName()} ${file.createNewFile()}")
-    val pw = new PrintWriter(file)
-    pw.write(words.mkString("\n"))
-    pw.close()
+
+    autoclose[PrintWriter, Unit](new PrintWriter(file)) {
+      case pw =>
+        pw.write(words.mkString("\n"))
+    }
   }
 
-  def readWords(fileName: String): List[String] = {
-    val is = this.getClass().getResourceAsStream(s"/data/$fileName.txt")
-    val source = Source.fromInputStream(is)
-    source.getLines().toList
+  def readWords(fileName: String): List[String] =
+    autoclose[java.io.InputStream, List[String]](this.getClass().getResourceAsStream(s"/data/$fileName.txt")) {
+      case is =>
+        val source = Source.fromInputStream(is)
+        source.getLines().toList
+    }
+
+  private def autoclose[T <: AutoCloseable, R](r: => T)(f: T => R): R = {
+    val resource = r
+    require(resource != null)
+
+    Try {
+      f(resource)
+    } match {
+      case Success(v) =>
+        Try(resource.close())
+          .fold(th => println(s"Error happened during in closing resource: $th [${th.getMessage()}]"), _ => ())
+        v
+      case Failure(th) =>
+        throw th
+    }
   }
 
   private def buildWords(count: Int): List[String] =
