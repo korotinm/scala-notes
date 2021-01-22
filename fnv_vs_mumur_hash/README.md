@@ -6,7 +6,7 @@
 - `Processor 2,2 GHz Quad-Core Intel Core i7`
 - `Memory 16 GB 1600 MHz DDR3`
 
-## This instruction was called for running all of tests below
+## Command line instruction
 
 - `jmh:run -i 3 -wi 4 -f1 -gc false`
 
@@ -20,7 +20,7 @@
 
 ---
 
-## Here were called methods for hashing 100K - 2.1M words with length from 5 to 11 chars. Each word was created with using random printable chars
+## Here were called methods for hashing 100K - 2.1M words with length from 5 to 11 chars. Each word was created with using a random printable chars
 
 | Benchmark | Mode | Cnt | Score | Error | Units |
 --- | --- | --- | --- | --- | ---
@@ -49,7 +49,7 @@ HashBenchmarks.murmur3_words_1_600_000 | thrpt | 6 | 27.520 | ± | 0.810 |ops/s
 HashBenchmarks.murmur3_words_1_900_000 | thrpt | 6 | 23.767 | ± | 0.638 |ops/s
 HashBenchmarks.murmur3_words_2_100_000 | thrpt | 6 | 21.227 | ± | 1.176 |ops/s
 
-## Result disaggregated by count
+## Result was disaggregated by count
 
 | count | fnvMinus1 | fnvMinus1a | murmur3 |
 --- | --- | --- | ---
