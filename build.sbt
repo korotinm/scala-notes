@@ -87,7 +87,7 @@ lazy val akka_stream_samples = (project in file("akka_stream_samples"))
     libraryDependencies += "com.typesafe.akka" %% "akka-http" % "10.1.1"
   )
 
-  lazy val fov_vs_mumur_hash = (project in file("fov_vs_mumur_hash"))
+  lazy val fnv_vs_mumur_hash = (project in file("fnv_vs_mumur_hash"))
     //.settings(commonSettings)
     .enablePlugins(JmhPlugin)
 
@@ -100,4 +100,5 @@ val training = (project in file("."))
   .aggregate(akka_typed_samples)
   .aggregate(akka_stream_samples)
   .aggregate(experiments)
-  .aggregate(fov_vs_mumur_hash)
+  .aggregate(fnv_vs_mumur_hash)
+  
