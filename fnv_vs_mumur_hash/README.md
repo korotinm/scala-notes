@@ -70,4 +70,4 @@ In this algorithm binary operation is used first of all but in `FNV - 1` seconda
 
 #### Quote from [the document](https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function#FNV-1a_hash):
 
-**The change in order leads to slightly better [avalanche characteristics](https://en.wikipedia.org/wiki/Avalanche_effect).**
+"**The change in order leads to slightly better [avalanche characteristics](https://en.wikipedia.org/wiki/Avalanche_effect).**"
