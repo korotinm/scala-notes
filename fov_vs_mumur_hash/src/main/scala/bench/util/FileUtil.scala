@@ -41,7 +41,7 @@ object FileUtil {
     } match {
       case Success(v) =>
         Try(resource.close())
-          .fold(th => println(s"Error happened during in closing resource: $th [${th.getMessage()}]"), _ => ())
+          .fold(th => throw th, _ => ())
         v
       case Failure(th) =>
         throw th

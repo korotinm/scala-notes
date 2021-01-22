@@ -1,6 +1,6 @@
 package bench
 
-object FOVHash {
+object FNVHash {
   val hash: Int = 0x811c9dc5
   val prime: Int = 0x01000193
 

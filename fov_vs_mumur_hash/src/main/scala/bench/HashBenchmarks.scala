@@ -21,67 +21,67 @@ class HashBenchmarks {
 
   @Benchmark
   def fnvMinus1a_words_100_000(wordState: WordState) =
-    wordState.words_100000.foreach(FOVHash.fnvMinus1a(_))
+    wordState.words_100000.foreach(FNVHash.fnvMinus1a(_))
 
   @Benchmark
   def fnvMinus1a_words_400_000(wordState: WordState) =
-    wordState.words_400000.foreach(FOVHash.fnvMinus1a(_))
+    wordState.words_400000.foreach(FNVHash.fnvMinus1a(_))
 
   @Benchmark
   def fnvMinus1a_words_700_000(wordState: WordState) =
-    wordState.words_700000.foreach(FOVHash.fnvMinus1a(_))
+    wordState.words_700000.foreach(FNVHash.fnvMinus1a(_))
 
   @Benchmark
   def fnvMinus1a_words_1_000_000(wordState: WordState) =
-    wordState.words_1000000.foreach(FOVHash.fnvMinus1a(_))
+    wordState.words_1000000.foreach(FNVHash.fnvMinus1a(_))
 
   @Benchmark
   def fnvMinus1a_words_1_300_000(wordState: WordState) =
-    wordState.words_1300000.foreach(FOVHash.fnvMinus1a(_))
+    wordState.words_1300000.foreach(FNVHash.fnvMinus1a(_))
 
   @Benchmark
   def fnvMinus1a_words_1_600_000(wordState: WordState) =
-    wordState.words_1600000.foreach(FOVHash.fnvMinus1a(_))
+    wordState.words_1600000.foreach(FNVHash.fnvMinus1a(_))
 
   @Benchmark
   def fnvMinus1a_words_1_900_000(wordState: WordState) =
-    wordState.words_1900000.foreach(FOVHash.fnvMinus1a(_))
+    wordState.words_1900000.foreach(FNVHash.fnvMinus1a(_))
 
   @Benchmark
   def fnvMinus1a_words_2_100_000(wordState: WordState) =
-    wordState.words_2100000.foreach(FOVHash.fnvMinus1a(_))
+    wordState.words_2100000.foreach(FNVHash.fnvMinus1a(_))
 
   @Benchmark
   def fnvMinus1_words_100_000(wordState: WordState) =
-    wordState.words_100000.foreach(FOVHash.fnvMinus1(_))
+    wordState.words_100000.foreach(FNVHash.fnvMinus1(_))
 
   @Benchmark
   def fnvMinus1_words_400_000(wordState: WordState) =
-    wordState.words_400000.foreach(FOVHash.fnvMinus1(_))
+    wordState.words_400000.foreach(FNVHash.fnvMinus1(_))
 
   @Benchmark
   def fnvMinus1_words_700_000(wordState: WordState) =
-    wordState.words_700000.foreach(FOVHash.fnvMinus1(_))
+    wordState.words_700000.foreach(FNVHash.fnvMinus1(_))
 
   @Benchmark
   def fnvMinus1_words_1_000_000(wordState: WordState) =
-    wordState.words_1000000.foreach(FOVHash.fnvMinus1(_))
+    wordState.words_1000000.foreach(FNVHash.fnvMinus1(_))
 
   @Benchmark
   def fnvMinus1_words_1_300_000(wordState: WordState) =
-    wordState.words_1300000.foreach(FOVHash.fnvMinus1(_))
+    wordState.words_1300000.foreach(FNVHash.fnvMinus1(_))
 
   @Benchmark
   def fnvMinus1_words_1_600_000(wordState: WordState) =
-    wordState.words_1600000.foreach(FOVHash.fnvMinus1(_))
+    wordState.words_1600000.foreach(FNVHash.fnvMinus1(_))
 
   @Benchmark
   def fnvMinus1_words_1_900_000(wordState: WordState) =
-    wordState.words_1900000.foreach(FOVHash.fnvMinus1(_))
+    wordState.words_1900000.foreach(FNVHash.fnvMinus1(_))
 
   @Benchmark
   def fnvMinus1_words_2_100_000(wordState: WordState) =
-    wordState.words_2100000.foreach(FOVHash.fnvMinus1(_))
+    wordState.words_2100000.foreach(FNVHash.fnvMinus1(_))
 
   @Benchmark
   def murmur3_words_100_000(wordState: WordState) =

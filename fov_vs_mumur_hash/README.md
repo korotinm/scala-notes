@@ -1,6 +1,7 @@
 # Comparison FOV hash functions
 
 ## Configuration
+
 - `MacBook Pro (Retina, 15-inch, Mid 2014)`
 - `Processor 2,2 GHz Quad-Core Intel Core i7`
 - `Memory 16 GB 1600 MHz DDR3`
@@ -19,31 +20,48 @@
 
 ---
 
-## Were called methods for hashing 100K - 2.1M words with length from 5 to 11 chars. Each word was created with using random printable chars
+## Here were called methods for hashing 100K - 2.1M words with length from 5 to 11 chars. Each word was created with using random printable chars
 
 | Benchmark | Mode | Cnt | Score | Error | Units |
 --- | --- | --- | --- | --- | ---
-HashBenchmarks.fnvMinus1_words_100_000 | thrpt | 3 | 116.859 | ±  7.821 | ops/s
-HashBenchmarks.fnvMinus1_words_400_000 | thrpt | 3 | 22.781 | ± 31.751 | ops/s
-HashBenchmarks.fnvMinus1_words_700_000 | thrpt | 3 | 12.091 | ±  8.342 | ops/s
-HashBenchmarks.fnvMinus1_words_1_000_000 | thrpt | 3 | 8.678 | ±  0.953 | ops/s
-HashBenchmarks.fnvMinus1_words_1_300_000 | thrpt | 3 | 8.517 | ±  0.615 | ops/s
-HashBenchmarks.fnvMinus1_words_1_600_000 | thrpt | 3 | 6.597 | ±  0.268 | ops/s
-HashBenchmarks.fnvMinus1_words_1_900_000 | thrpt | 3 | 4.997 | ± 13.451 | ops/s
-HashBenchmarks.fnvMinus1_words_2_100_000 | thrpt | 3 | 3.936 | ±  2.315 | ops/s
-HashBenchmarks.fnvMinus1a_words_100_000 | thrpt | 3 | 93.467 | ± 84.484 | ops/s
-HashBenchmarks.fnvMinus1a_words_400_000 | thrpt | 3 | 28.066 | ±  2.498 | ops/s
-HashBenchmarks.fnvMinus1a_words_700_000 | thrpt | 3 | 15.734 | ±  1.615 | ops/s
-HashBenchmarks.fnvMinus1a_words_1_000_000 | thrpt | 3 | 10.905 | ±  0.416 | ops/s
-HashBenchmarks.fnvMinus1a_words_1_300_000 | thrpt | 3 | 8.318 | ±  1.348 | ops/s
-HashBenchmarks.fnvMinus1a_words_1_600_000 | thrpt | 3 | 6.729 | ±  1.563 | ops/s
-HashBenchmarks.fnvMinus1a_words_1_900_000 | thrpt | 3 | 5.475 | ±  9.738 | ops/s
-HashBenchmarks.fnvMinus1a_words_2_100_000 | thrpt | 3 | 5.227 | ±  0.642 | ops/s
-HashBenchmarks.murmur3_words_100_000 | thrpt | 3 | 482.276 | ± 21.645 | ops/s
-HashBenchmarks.murmur3_words_400_000 | thrpt | 3 | 70.653 | ± 59.031 | ops/s
-HashBenchmarks.murmur3_words_700_000 | thrpt | 3 | 58.652 | ±  0.989 | ops/s
-HashBenchmarks.murmur3_words_1_000_000 | thrpt | 3 | 38.093 | ±  0.643 | ops/s
-HashBenchmarks.murmur3_words_1_300_000 | thrpt | 3 | 17.583 | ± 25.266 | ops/s
-HashBenchmarks.murmur3_words_1_600_000 | thrpt | 3 | 17.226 | ±  9.790 | ops/s
-HashBenchmarks.murmur3_words_1_900_000 | thrpt | 3 | 19.743 | ±  0.639 | ops/s
-HashBenchmarks.murmur3_words_2_100_000 | thrpt | 3 | 14.430 | ± 18.133 | ops/s
+HashBenchmarks.fnvMinus1_words_100_000 | thrpt | 6 | 104.707 | ± | 32.088 |ops/s
+HashBenchmarks.fnvMinus1_words_400_000 | thrpt | 6 | 26.436 | ± | 1.300 |ops/s
+HashBenchmarks.fnvMinus1_words_700_000 | thrpt | 6 | 15.047 | ± | 0.311 |ops/s
+HashBenchmarks.fnvMinus1_words_1_000_000 | thrpt | 6 | 10.501 | ± | 0.462 |ops/s
+HashBenchmarks.fnvMinus1_words_1_300_000 | thrpt | 6 | 8.128 | ± | 0.104 |ops/s
+HashBenchmarks.fnvMinus1_words_1_600_000 | thrpt | 6 | 6.544 | ± | 0.199 |ops/s
+HashBenchmarks.fnvMinus1_words_1_900_000 | thrpt | 6 | 5.542 | ± | 0.082 |ops/s
+HashBenchmarks.fnvMinus1_words_2_100_000 | thrpt | 6 | 4.962 | ± | 0.196 |ops/s
+HashBenchmarks.fnvMinus1a_words_100_000 | thrpt | 6 | 111.390 | ± | 4.007 |ops/s
+HashBenchmarks.fnvMinus1a_words_400_000 | thrpt | 6 | 26.482 | ± | 1.407 |ops/s
+HashBenchmarks.fnvMinus1a_words_700_000 | thrpt | 6 | 15.009 | ± | 0.658 |ops/s
+HashBenchmarks.fnvMinus1a_words_1_000_000 | thrpt | 6 | 10.577 | ± | 0.163 |ops/s
+HashBenchmarks.fnvMinus1a_words_1_300_000 | thrpt | 6 | 8.031 | ± | 0.253 |ops/s
+HashBenchmarks.fnvMinus1a_words_1_600_000 | thrpt | 6 | 6.574 | ± | 0.109 |ops/s
+HashBenchmarks.fnvMinus1a_words_1_900_000 | thrpt | 6 | 5.539 | ± | 0.088 |ops/s
+HashBenchmarks.fnvMinus1a_words_2_100_000 | thrpt | 6 | 5.004 | ± | 0.040 |ops/s
+HashBenchmarks.murmur3_words_100_000 | thrpt | 6 | 484.116 | ± | 13.840 |ops/s
+HashBenchmarks.murmur3_words_400_000 | thrpt | 6 | 120.400 | ± | 4.159 |ops/s
+HashBenchmarks.murmur3_words_700_000 | thrpt | 6 | 69.062 | ± | 3.507 |ops/s
+HashBenchmarks.murmur3_words_1_000_000 | thrpt | 6 | 48.610 | ± | 0.518 |ops/s
+HashBenchmarks.murmur3_words_1_300_000 | thrpt | 6 | 35.064 | ± | 2.797 |ops/s
+HashBenchmarks.murmur3_words_1_600_000 | thrpt | 6 | 27.520 | ± | 0.810 |ops/s
+HashBenchmarks.murmur3_words_1_900_000 | thrpt | 6 | 23.767 | ± | 0.638 |ops/s
+HashBenchmarks.murmur3_words_2_100_000 | thrpt | 6 | 21.227 | ± | 1.176 |ops/s
+
+## Result disaggregated by count
+
+| count | fnvMinus1 | fnvMinus1a | murmur3 |
+--- | --- | --- | ---
+100_000 | 104.707 | 111.390 | 484.116
+400_000 | 26.436 | 26.482 | 120.400
+700_000 | 15.047 | 15.009 | 69.062
+1_000_000 | 10.501 | 10.577 | 48.610
+1_300_000 | 8.128 | 8.031 | 35.064
+1_600_000 | 6.544 | 6.574 | 27.520
+1_900_000 | 5.542 | 5.539 | 23.767
+2_100_000 | 4.962 | 5.004 | 21.227
+
+## Conclusion
+
+
