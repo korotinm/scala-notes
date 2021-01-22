@@ -64,4 +64,10 @@ HashBenchmarks.murmur3_words_2_100_000 | thrpt | 6 | 21.227 | ± | 1.176 |ops/s
 
 ## Conclusion
 
+Hash algorithm `FNV - 1a` is optimised with applying arithmetics and binary operations in a different order.
 
+In this algorithm binary operation is used first of all but in `FNV - 1` secondarily. It gives small advantages for `FNV - 1a` hash function.
+
+#### Quote from [the document](https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function#FNV-1a_hash):
+
+**The change in order leads to slightly better [avalanche characteristics](https://en.wikipedia.org/wiki/Avalanche_effect).**
