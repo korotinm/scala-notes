@@ -1,4 +1,4 @@
-# Comparison FOV hash functions
+# Comparison FNV hash functions
 
 ## Configuration
 
