@@ -63,3 +63,10 @@ object Main extends App{
   println(s"converterRes2: $converterRes2")
   
 }
+
+/* output:
+res: long
+res2: true
+converterRes: 10
+converterRes2: true
+*/
