@@ -10,14 +10,14 @@ object Main extends App{
   }
 
 
-  trait Converter[A, R] {
-    type B = R
+  trait Converter[A] {
+    type B
     def convert(v: A): B
   }
 
   object Foo {
     type Aux[A0, B0] = Foo[A0] {type B = B0}
-    type AuxConverter[A0, B0] = Converter[A0, B0]
+    type AuxConverter[A0, B0] = Converter[A0] {type B = B0}
 
     implicit def fi = new Foo[Int] {
       type B = String
@@ -35,14 +35,14 @@ object Main extends App{
     }
 
     // converter
-    implicit def  int2string = new Converter[Int, String] {
-      //type B = String
-      def convert(v: Int): String = v.toString()
+    implicit def  int2string = new Converter[Int] {
+      type B = String
+      def convert(v: Int): B = v.toString()
     }
 
-    implicit def  int2boolean = new Converter[Int, Boolean] {
-      //type B = Boolean
-      def convert(v: Int): Boolean = if(v <= 0) false else true
+    implicit def  int2boolean = new Converter[Int] {
+      type B = Boolean
+      def convert(v: Int): B = if(v <= 0) false else true
     }
   }
 
