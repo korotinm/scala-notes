@@ -91,6 +91,18 @@ lazy val akka_stream_samples = (project in file("akka_stream_samples"))
     //.settings(commonSettings)
     .enablePlugins(JmhPlugin)
 
+  lazy val zio_actors = (project in file("zio_actors"))
+  .settings(commonSettings)
+  .settings(
+    libraryDependencies += "dev.zio" %% "zio-actors" % "0.0.9"
+  )
+
+  lazy val zio_layers = (project in file("zio_layers"))
+  .settings(commonSettings)
+  .settings(
+    libraryDependencies += "dev.zio" %% "zio" % "1.0.9"
+  )
+
 
 val training = (project in file("."))
   .settings(commonSettings)
@@ -101,4 +113,6 @@ val training = (project in file("."))
   .aggregate(akka_stream_samples)
   .aggregate(experiments)
   .aggregate(fnv_vs_mumur_hash)
+  .aggregate(zio_actors)
+  .aggregate(zio_layers)
   
