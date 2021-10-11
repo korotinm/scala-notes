@@ -4,7 +4,6 @@ target/
 .bloop
 .metals
 metals.sbt
-*.worksheet.sc
 
 # Ignore project files for Eclipse
 /.classpath
