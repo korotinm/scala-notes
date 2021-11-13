@@ -89,11 +89,11 @@ object ZLayerExample extends zio.App {
   val user = User("Mikhail", "mikhail@domain.com")
   val message = "Hello, Mikhail ..."
 
-  def notifyMikhail() =
+/*   def notifyMikhail() =
     UserEmailer
       .notify(user, message)
       .provideLayer(backendLayer)
-      .exitCode
+      .exitCode */
 
   override def run(args: List[String]): URIO[ZEnv, ExitCode] =
     UserSubscription
