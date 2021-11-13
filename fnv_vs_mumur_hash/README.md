@@ -12,7 +12,7 @@
 
 ---
 
-## Here were considered 3 types of hash functions
+## 3 types of hash functions were considered
 
 - `FOV - 1` (32 bits)
 - `FOV - 1a` (32 bits)
@@ -20,7 +20,7 @@
 
 ---
 
-## Here were called methods for hashing 100K - 2.1M words with length from 5 to 11 chars. Each word was created with using a random printable chars
+##  Methods for hashing 100K - 2.1M words with length from 5 to 11 chars. Each word was created with using a random printable chars
 
 | Benchmark | Mode | Cnt | Score | Error | Units |
 --- | --- | --- | --- | --- | ---
